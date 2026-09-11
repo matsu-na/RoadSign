@@ -1,0 +1,25 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bgColor);
+  transition: background 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 64px;
+}
+
+.page-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 1200px) {
+  .page-container {
+    min-width: auto;
+    padding: 0 20px;
+  }
+}
