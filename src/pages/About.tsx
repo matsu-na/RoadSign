@@ -32,9 +32,6 @@ const About = () => {
     <div className="about-page">
       <div className="page-container">
 
-        <div className="about-header">
- 
-        </div>
 
         <div className="about-content">
           <h2 style={{ color: 'var(--textColor)', marginBottom: '-4px' }}>为什么做这个网站</h2>
