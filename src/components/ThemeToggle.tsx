@@ -8,14 +8,10 @@ const ThemeToggle = () => {
   return (
     <button 
       className="theme-toggle" 
-      onClick={toggleTheme}
+      onClick={(e) => toggleTheme(e)}
       aria-label={theme === 'dark' ? '切换到亮色模式' : '切换到暗色模式'}
     >
-      <div className="toggle-track">
-        <Sun size={14} className="icon sun-icon" />
-        <Moon size={14} className="icon moon-icon" />
-        <div className="toggle-thumb" />
-      </div>
+      {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
     </button>
   );
 };

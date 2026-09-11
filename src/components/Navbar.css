@@ -1,55 +1,71 @@
+/* 导航栏基础样式 */
 .navbar {
-  background: var(--navbar-bg);
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 80px);
+  max-width: 1200px;
   z-index: 1000;
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
   transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+[data-theme="dark"] .navbar {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* 滚动时增强效果 */
 .navbar--scrolled {
-  background: var(--navbar-bg);
-  box-shadow: 0 4px 20px var(--shadow-color);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .navbar--scrolled {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
 }
 
 .navbar-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 64px;
+  height: 56px;
 }
 
+/* 品牌 */
 .navbar-brand {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: var(--textColor);
-  gap: 12px;
+  gap: 10px;
 }
 
 .brand-icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, rgba(45, 140, 240, 0.15) 0%, rgba(45, 140, 240, 0.05) 100%);
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, rgba(45, 140, 240, 0.2) 0%, rgba(45, 140, 240, 0.05) 100%);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 [data-theme="light"] .brand-icon-wrapper {
-  background: linear-gradient(135deg, rgba(43, 108, 176, 0.1) 0%, rgba(43, 108, 176, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(43, 108, 176, 0.15) 0%, rgba(43, 108, 176, 0.05) 100%);
 }
 
 .navbar-brand:hover .brand-icon-wrapper {
   transform: rotate(10deg) scale(1.05);
-  background: linear-gradient(135deg, rgba(45, 140, 240, 0.25) 0%, rgba(45, 140, 240, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(45, 140, 240, 0.3) 0%, rgba(45, 140, 240, 0.1) 100%);
 }
 
 .brand-icon {
@@ -58,15 +74,16 @@
 }
 
 .brand-text {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   background: linear-gradient(135deg, var(--primaryColor) 0%, var(--primaryHover) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* 菜单 */
 .navbar-menu {
   display: flex;
   align-items: center;
@@ -76,12 +93,12 @@
 .navbar-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
+  gap: 6px;
+  padding: 8px 14px;
   text-decoration: none;
   color: var(--textSecondary);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   border-radius: 10px;
   transition: all 0.2s ease;
   position: relative;
@@ -93,7 +110,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%) scaleX(0);
-  width: 20px;
+  width: 16px;
   height: 2px;
   background: var(--primaryColor);
   border-radius: 2px;
@@ -106,7 +123,7 @@
 
 .navbar-item:hover {
   color: var(--textColor);
-  background: rgba(45, 140, 240, 0.08);
+  background: rgba(45, 140, 240, 0.1);
 }
 
 .navbar-item:hover svg {
@@ -126,8 +143,19 @@
   transform: translateX(-50%) scaleX(1);
 }
 
+/* 操作按钮 */
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+}
+
+/* ThemeToggle 在导航栏中的样式 */
+.navbar .theme-toggle {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

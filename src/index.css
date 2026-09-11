@@ -111,3 +111,14 @@ ul, ol {
 [data-theme="light"] .hero-title .title-main {
   text-shadow: none;
 }
+
+/* 主题切换动画 */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-group(root),
+::view-transition-image-pair(root) {
+  isolation: isolate;
+}

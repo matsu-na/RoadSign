@@ -59,22 +59,6 @@ const About = () => {
             </div>
           </GameFrame>
 
-          <GameFrame title="技术栈" variant="gold">
-            <div className="tech-stack">
-              <span className="tech-item">React 18</span>
-              <span className="tech-item">TypeScript</span>
-              <span className="tech-item">React Router</span>
-              <span className="tech-item">Lucide Icons</span>
-              <span className="tech-item">CSS3</span>
-              <span className="tech-item">Vite</span>
-            </div>
-          </GameFrame>
-
-          <GameFrame title="参考来源" variant="blue">
-            <p>
-              本站设计参考了 <a href="https://www.ffxiv.cn/v2/" target="_blank" rel="noopener noreferrer">FFXIV.CN</a> 网站的暗色主题和卡片式布局风格。
-            </p>
-          </GameFrame>
 
           <GameFrame title="联系我们" variant="purple">
             <div className="contact-info">

@@ -422,29 +422,64 @@
   z-index: 1;
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px var(--shadow-color);
+  overflow: hidden;
+}
+
+.search-input-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(45, 140, 240, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.search-input-wrapper:hover::before {
+  left: 100%;
 }
 
 .search-input-wrapper:focus-within {
   border-color: var(--primaryColor);
   box-shadow: 0 8px 32px rgba(45, 140, 240, 0.25);
+  transform: translateY(-2px);
 }
 
 [data-theme="light"] .search-input-wrapper:focus-within {
   box-shadow: 0 8px 32px rgba(43, 108, 176, 0.18);
 }
 
-.search-input-wrapper::before {
-  display: none;
-}
-
 .search-icon {
   color: var(--primaryColor);
   flex-shrink: 0;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  animation: searchPulse 2s ease-in-out infinite;
+}
+
+@keyframes searchPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .search-input-wrapper:focus-within .search-icon {
-  transform: scale(1.1);
+  animation: searchFocus 0.3s ease forwards;
+}
+
+@keyframes searchFocus {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(0deg);
+  }
 }
 
 .search-input {
@@ -455,11 +490,18 @@
   font-size: 1rem;
   color: var(--textColor);
   letter-spacing: 0.3px;
+  transition: all 0.3s ease;
 }
 
 .search-input::placeholder {
   color: var(--textSecondary);
   font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus::placeholder {
+  color: transparent;
+  opacity: 0;
 }
 
 .search-hint {
@@ -473,6 +515,19 @@
   color: var(--textSecondary);
   flex-shrink: 0;
   border: 1px solid var(--borderColor);
+  transition: all 0.3s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.search-input-wrapper:focus-within .search-hint {
+  opacity: 0;
+  transform: scale(0.8);
+  width: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  overflow: hidden;
 }
 
 .search-hint kbd {
