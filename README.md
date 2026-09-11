@@ -1,32 +1,37 @@
-# React + TypeScript + Vite
+# ROADSIGN
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+牧丸导航站 — FF14 攻略工具一站直达
 
-Currently, two official plugins are available:
+## 为什么做这个网站
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+作为一名《最终幻想14》玩家，日常游戏中频繁需要查阅各类攻略、使用生产宏、查询市场物价、浏览社区讨论……这些资源散落在十几个不同的网站里，每次都要翻找书签或搜索引擎，效率很低。
 
-## React Compiler
+于是我决定做一个导航站，把最常用、最靠谱的站点按分类整理在一起，做到**一站直达**——打开 ROADSIGN，点击即可跳转，省去反复搜索的时间。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 网站的意义
 
-## Expanding the Oxlint configuration
+ROADSIGN 不只是一个链接合集。它的核心目标是**降低信息获取成本**，让玩家把更多时间花在享受游戏本身，而不是在浏览器里翻找页面。
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+无论你是刚入坑的新人、研究生产的工匠，还是追求极限的高难玩家，都可以在这里快速找到你需要的工具与资源。未来还会持续收录和更新站点，让导航站与游戏版本同步演进。
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+- **整合资源** — 将分散的攻略、工具、社区资源汇聚一处，告别频繁切换书签的烦恼
+- **高效检索** — 通过分类导航与智能搜索，帮助玩家在最短时间内定位所需站点
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 技术栈
+
+| 技术 | 版本 |
+|------|------|
+| React | v19.2 |
+| TypeScript | v6.0 |
+| Vite | v8.3 |
+| Lucide Icons | v1.44 |
+| CSS3 | 自适应布局 |
+| React Router | v7.18 |
+
+## 联系方式
+
+- **邮箱**：your@email.com
+- **GitHub**：github.com/your-name
+- **QQ 群**：123456789
+
+如有建议或希望收录的站点，欢迎通过以上方式联系我。
