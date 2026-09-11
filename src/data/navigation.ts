@@ -25,100 +25,15 @@ export const categories: Category[] = [
     iconName: 'BookOpen',
     color: '#2d8cf0',
     items: [
+      
       {
-        id: 'raid-guide',
-        title: '零式攻略',
-        url: 'https://www.ffxiv.cn',
-        description: '当前版本零式副本攻略',
-        iconName: 'Swords',
-        color: '#ed4014'
+        id: 'database',
+        title: '官方数据库',
+        url: 'https://ff14.hiclb.net',
+        description: '物品、任务、NPC查询',
+        iconName: 'Database',
+        color: '#2d8cf0'
       },
-      {
-        id: 'trial-guide',
-        title: '讨伐战攻略',
-        url: 'https://www.ffxiv.cn',
-        description: '讨伐歼灭战攻略',
-        iconName: 'Shield',
-        color: '#f90'
-      },
-      {
-        id: 'msq-guide',
-        title: '主线剧情',
-        url: 'https://www.ffxiv.cn',
-        description: '主线任务流程攻略',
-        iconName: 'BookOpen',
-        color: '#19be6b'
-      },
-      {
-        id: 'job-guide',
-        title: '职业指南',
-        url: 'https://www.ffxiv.cn',
-        description: '各职业玩法与配装',
-        iconName: 'Target',
-        color: '#722ed1'
-      },      {
-        id: 'raid-guide',
-        title: '零式攻略',
-        url: 'https://www.ffxiv.cn',
-        description: '当前版本零式副本攻略',
-        iconName: 'Swords',
-        color: '#ed4014'
-      },
-      {
-        id: 'trial-guide',
-        title: '讨伐战攻略',
-        url: 'https://www.ffxiv.cn',
-        description: '讨伐歼灭战攻略',
-        iconName: 'Shield',
-        color: '#f90'
-      },
-      {
-        id: 'msq-guide',
-        title: '主线剧情',
-        url: 'https://www.ffxiv.cn',
-        description: '主线任务流程攻略',
-        iconName: 'BookOpen',
-        color: '#19be6b'
-      },
-      {
-        id: 'job-guide',
-        title: '职业指南',
-        url: 'https://www.ffxiv.cn',
-        description: '各职业玩法与配装',
-        iconName: 'Target',
-        color: '#722ed1'
-      },      {
-        id: 'raid-guide',
-        title: '零式攻略',
-        url: 'https://www.ffxiv.cn',
-        description: '当前版本零式副本攻略',
-        iconName: 'Swords',
-        color: '#ed4014'
-      },
-      {
-        id: 'trial-guide',
-        title: '讨伐战攻略',
-        url: 'https://www.ffxiv.cn',
-        description: '讨伐歼灭战攻略',
-        iconName: 'Shield',
-        color: '#f90'
-      },
-      {
-        id: 'msq-guide',
-        title: '主线剧情',
-        url: 'https://www.ffxiv.cn',
-        description: '主线任务流程攻略',
-        iconName: 'BookOpen',
-        color: '#19be6b'
-      },
-      {
-        id: 'job-guide',
-        title: '职业指南',
-        url: 'https://www.ffxiv.cn',
-        description: '各职业玩法与配装',
-        iconName: 'Target',
-        color: '#722ed1'
-      }
     ]
   },
   {

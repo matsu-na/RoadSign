@@ -70,6 +70,74 @@ const Features = () => {
     <div className="features-page">
       <ParticleBackground />
 
+      <div className="page-container">
+        <div className="features-header">
+          <div className="features-icon-wrapper pulse">
+            <Star size={36} className="features-icon" />
+          </div>
+          <h1 className="glow">功能特色</h1>
+          <p>ROADSIGN 导航站为你提供的所有能力</p>
+        </div>
+
+        <div className="stats-row">
+          {stats.map((s, i) => (
+            <div
+              key={s.label}
+              className="stat-card bounce"
+              style={{ animationDelay: `${i * 0.1}s`, '--stat-color': s.color } as React.CSSProperties}
+            >
+              <span className="stat-value">{s.value}</span>
+              <span className="stat-label-text">{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="features-grid-page">
+          {features.map((f, i) => (
+            <div
+              key={f.title}
+              className="feature-card bounce"
+              style={{ animationDelay: `${i * 0.08}s`, '--card-accent': f.color } as React.CSSProperties}
+            >
+              <div className="feature-card-icon" style={{ background: `${f.color}18`, color: f.color }}>
+                <f.icon size={28} />
+              </div>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+              <ChevronRight size={18} className="feature-card-arrow" />
+            </div>
+          ))}
+        </div>
+
+        <div className="features-tech-section">
+          <div className="tech-header">
+            <Keyboard size={22} />
+            <h2>技术栈</h2>
+          </div>
+          <div className="tech-chips">
+            {['React 18', 'TypeScript', 'Vite', 'React Router v6', 'Lucide React', 'CSS3'].map((t) => (
+              <span key={t} className="tech-chip">{t}</span>
+            ))}
+          </div>
+        </div>
+
+        <div className="features-cta">
+          <Link to="/" className="cta-btn primary-btn bounce">
+            <Gamepad2 size={18} />
+            <span>开始探索</span>
+          </Link>
+          <Link to="/about" className="cta-btn secondary-btn bounce delay-100">
+            <span>了解更多</span>
+          </Link>
+        </div>
+
+        <div className="features-footer">
+          <Link to="/" className="back-home bounce">
+            <ArrowLeft size={18} />
+            <span>返回首页</span>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

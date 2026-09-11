@@ -1,13 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Swords, Home, Info, Star, Menu, X } from 'lucide-react';
+import { Swords, Home, Info, Star } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import './Navbar.css';
 
 const Navbar = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,10 +15,6 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location]);
 
   const isActive = (path: string) => {
     if (path === '/') {
@@ -38,7 +33,7 @@ const Navbar = () => {
           <span className="brand-text">ROADSIGN</span>
         </Link>
         
-        <div className={`navbar-menu ${isMobileMenuOpen ? 'navbar-menu--open' : ''}`}>
+        <div className="navbar-menu">
           <Link to="/" className={`navbar-item ${isActive('/')}`}>
             <Home size={18} />
             <span>首页</span>
@@ -55,13 +50,6 @@ const Navbar = () => {
 
         <div className="navbar-actions">
           <ThemeToggle />
-          <button 
-            className="mobile-menu-btn"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
         </div>
       </div>
     </nav>

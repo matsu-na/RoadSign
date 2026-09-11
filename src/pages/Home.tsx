@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Swords, ExternalLink, Search } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ExternalLink, Search } from 'lucide-react';
 import { categories, searchNavItems } from '../data/navigation';
 import type { NavItem } from '../data/navigation';
 import ParticleBackground from '../components/ParticleBackground';
@@ -10,6 +10,8 @@ const Home = () => {
   const [typedText, setTypedText] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<NavItem[]>([]);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
   const fullText = '牧丸导航站·攻略工具一站直达';
 
   useEffect(() => {
@@ -66,45 +68,45 @@ const Home = () => {
   return (
     <div className="home">
       <ParticleBackground />
-      
-      <section className="hero-section">
+
+      <div className="hero-section">
         <div className="hero-wrapper">
           <div className="hero-content">
-            <div className="hero-badge">
-              <Swords size={18} className="badge-icon" />
-              <span className="badge-text">NAVIGATION</span>
-            </div>
-            
+
             <h1 className="hero-title">
               <span className="title-main">ROADSIGN</span>
             </h1>
-            
+
             <p className="hero-subtitle">
               <span className="typed-text">{typedText}</span>
-              <span className="cursor">|</span>
+              <span className="cursor"> __</span>
             </p>
-            
-       
+
+
           </div>
 
-          <div className="hero-search">
-            <div className="search-container">
+          <div className="search-container" >
+            <div className="hero-search" ref={searchRef}>
               <div className="search-input-wrapper">
                 <Search size={20} className="search-icon" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
+                  onFocus={() => setIsSearchFocused(true)}
+                  onBlur={() => {
+                    setTimeout(() => setIsSearchFocused(false), 200);
+                  }}
                   placeholder="搜索站点..."
                   className="search-input"
                 />
                 <div className="search-hint">
-                  <kbd>Ctrl</kbd>
+                  <kbd>Ctrl</kbd>+
                   <kbd>K</kbd>
                 </div>
               </div>
-              
-              <div className={`search-results ${searchResults.length > 0 ? 'active' : ''}`}>
+
+              <div className={`search-results ${searchResults.length > 0 && isSearchFocused ? 'active' : ''}`}>
                 {searchResults.slice(0, 8).map((item, index) => (
                   <a
                     key={item.id}
@@ -113,6 +115,7 @@ const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ animationDelay: `${index * 0.05}s` }}
+                    onMouseDown={(e) => e.preventDefault()}
                   >
                     <Icon name={item.iconName} size={18} color={item.color} />
                     <span className="result-title">{item.title}</span>
@@ -120,22 +123,21 @@ const Home = () => {
                   </a>
                 ))}
               </div>
-            </div>
-          </div>
+            </div></div>
         </div>
-      </section>
+      </div>
 
-      <section className="nav-section">
+      <div className="nav-section">
         <div className="section-header">
           <div className="header-decoration"></div>
           <h2 className="glow">站点导航</h2>
           <div className="header-decoration"></div>
         </div>
-        
+
         <div className="categories-list">
           {categories.map((category, index) => (
-            <div 
-              key={category.id} 
+            <div
+              key={category.id}
               className="category-block fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -162,11 +164,7 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </section>
-
-      <footer className="footer">
-
-      </footer>
+      </div>
     </div>
   );
 };

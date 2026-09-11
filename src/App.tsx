@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
-import Navbar from './components/Navbar';
+import Layout from './components/Layout';
 import Home from './pages/Home';
 import Category from './pages/Category';
 import Search from './pages/Search';
@@ -12,18 +12,15 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
-        <div className="app">
-          <Navbar />
-          <main className="main-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/category/:id" element={<Category />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/features" element={<Features />} />
-              <Route path="/about" element={<About />} />
-            </Routes>
-          </main>
-        </div>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/category/:id" element={<Category />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/about" element={<About />} />
+          </Route>
+        </Routes>
       </Router>
     </ThemeProvider>
   );
