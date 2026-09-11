@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ParticleBackground from './ParticleBackground';
 import './Layout.css';
 
 const Layout = () => {
@@ -13,6 +14,7 @@ const Layout = () => {
 
   return (
     <div className="app">
+      <ParticleBackground />
       <Navbar />
       <main className="main-content">
         <Outlet />

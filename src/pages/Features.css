@@ -92,6 +92,110 @@
   color: var(--textSecondary);
 }
 
+/* 筛选和搜索区域 */
+.features-filter {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--cardBg);
+  border: 1px solid var(--borderColor);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+  border-color: var(--primaryColor);
+  box-shadow: 0 4px 20px rgba(45, 140, 240, 0.15);
+}
+
+.search-box .search-icon {
+  color: var(--primaryColor);
+  flex-shrink: 0;
+}
+
+.search-box .search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: var(--textColor);
+}
+
+.search-box .search-input::placeholder {
+  color: var(--textSecondary);
+}
+
+.search-box .clear-btn {
+  background: rgba(128, 128, 128, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textSecondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-box .clear-btn:hover {
+  background: rgba(128, 128, 128, 0.2);
+  color: var(--textColor);
+}
+
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.category-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--cardBg);
+  border: 1px solid var(--borderColor);
+  border-radius: 20px;
+  color: var(--textSecondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-tab:hover {
+  border-color: var(--primaryColor);
+  color: var(--primaryColor);
+}
+
+.category-tab.active {
+  background: var(--primaryColor);
+  border-color: var(--primaryColor);
+  color: white;
+}
+
+.category-tab svg {
+  transition: transform 0.2s ease;
+}
+
+.category-tab:hover svg {
+  transform: scale(1.1);
+}
+
 .features-grid-page {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -161,23 +265,46 @@
   font-size: 0.88rem;
   color: var(--textSecondary);
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 12px;
 }
 
-.feature-card-arrow {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
+.feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.feature-tag {
+  padding: 3px 8px;
+  font-size: 0.7rem;
   color: var(--textSecondary);
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: all 0.2s ease;
+  background: rgba(128, 128, 128, 0.08);
+  border: 1px solid;
+  border-radius: 4px;
 }
 
-.feature-card:hover .feature-card-arrow {
-  opacity: 1;
-  transform: translateX(0);
-  color: var(--card-accent, var(--primaryColor));
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--textSecondary);
+  position: relative;
+  z-index: 2;
+}
+
+.no-results svg {
+  opacity: 0.3;
+  margin-bottom: 16px;
+}
+
+.no-results h3 {
+  font-size: 1.2rem;
+  color: var(--textColor);
+  margin-bottom: 8px;
+}
+
+.no-results p {
+  font-size: 0.95rem;
 }
 
 .features-tech-section {

@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { ExternalLink, Search } from 'lucide-react';
 import { categories, searchNavItems } from '../data/navigation';
 import type { NavItem } from '../data/navigation';
-import ParticleBackground from '../components/ParticleBackground';
 import Icon from '../components/Icon';
 import './Home.css';
 
@@ -67,8 +66,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      <ParticleBackground />
-
       <div className="hero-section">
         <div className="hero-wrapper">
           <div className="hero-content">
